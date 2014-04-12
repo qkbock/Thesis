@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C4095140-4E24-4AD0-A380-6E7CB05FEDDF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Thesis</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4DBC09C1-7DF2-4D4E-945D-9518FD791B5B</key>
+		<string>https://github.com/qkbock/Thesis.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Thesis/Thesis.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4DBC09C1-7DF2-4D4E-945D-9518FD791B5B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/qkbock/Thesis.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4DBC09C1-7DF2-4D4E-945D-9518FD791B5B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4DBC09C1-7DF2-4D4E-945D-9518FD791B5B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Thesis</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *fullURL = @"http://54.235.78.70/name/home.php";
+    NSString *fullURL = @"http://54.235.78.70/name/index.php";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_viewWeb loadRequest:requestObj];
