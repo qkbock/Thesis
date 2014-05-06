@@ -14,19 +14,25 @@ int sensorValue = 0;
 String person_a = "John";
 String person_b = "Quincy";
 
-float totalToday_a = 0;
-float totalToday_b = 0;
-float todayGoal_a = 670;
-float todayGoal_b = 670;
+//information from server
+int totalToday_a = 0;
+int totalToday_b = 0;
+int todayGoal_a = 670;
+int todayGoal_b = 670;
+int buttonR_a = 0;
+int buttonG_a = 0;
+int buttonB_a = 255;
+int buttonR_b = 120;
+int buttonG_b = 160;
+int buttonB_b = 180;
 
 float light_a;
 float light_b;
 uint32_t color_a = ring_a.Color(255, 0, 0);
 uint32_t color_b = ring_b.Color(255, 0, 0);
 
-uint32_t buttonColor_a = button_a.Color(0, 0, 255);
-uint32_t buttonColor_b = button_b.Color(120, 160, 180);
-
+uint32_t buttonColor_a = button_a.Color(buttonR_a, buttonG_a, buttonB_a);
+uint32_t buttonColor_b = button_b.Color(buttonR_b, buttonG_b, buttonB_b);
 
 int buttonState_a = 0;
 int buttonState_b = 0;
@@ -67,7 +73,7 @@ void loop(){
 //  Serial.println(sensorValue);
   totalToday_b = sensorValue;
 
-  //.....................................................................
+//.....................................................................
   
   senseButtonA();
   senseButtonB();
