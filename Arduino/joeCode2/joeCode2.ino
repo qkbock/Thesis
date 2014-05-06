@@ -84,19 +84,16 @@ void setup() {
     wifly.close();
   }
   
+      
+
   checkMyWebsite(); //initial call to server
+
 }
  
 void loop() {
- 
-//  if(digitalRead(button)==HIGH){   /*check for button press*/
-//    delay(2000);      //to prevent "double clicks"
-//    checkMyWebsite(); //check the website!
-//  }
- 
-  /* here you need to create a timer that calls checkMyWebsite()
-  every 1 minute or every 5 minutes, however frequently as needed */
-  
+     
+
+
  
  
   while (wifly.available() > 0) {       /* check to see if there is any data recvd by wifly */
@@ -118,6 +115,7 @@ void loop() {
   if (Serial.available() > 0) {
     wifly.write(Serial.read());
   }
+  uploadToMyWebsite("Quincy", "today", "noon", "1pm");
 }
  
  
@@ -177,6 +175,25 @@ void checkMyWebsite() {
     /* Send the request */
     //point wifly to correct folder directory on the server
     wifly.println("GET /name/queryData.php HTTP/1.1"); //change me!
+    wifly.println("Host: " + host);
+    wifly.println("Connection: close");
+    wifly.println();
+  } else {
+    Serial.println("Failed to connect to the website");
+  }
+}
+
+/* function that gives data to server */
+void uploadToMyWebsite(String username, String date, String startTime, String endTime) {
+  Serial.println("\r-->start sending to server");
+  String host(site);
+  if (wifly.open(site, 80)) {
+    Serial.print("Connected to ");
+    Serial.println(site);
+    /* Send the request */
+    //point wifly to correct folder directory on the server
+    wifly.println("GET /name/receiveData.php?userName=Quincy&date=today&startTime=noon&endTime=1pm HTTP/1.1"); //change me!
+//    wifly.println("GET /name/logAChore.php?userName="+username+"&date="+date+"&startTime="+startTime+"&endTime="+endTime+" HTTP/1.1"); //change me!
     wifly.println("Host: " + host);
     wifly.println("Connection: close");
     wifly.println();
