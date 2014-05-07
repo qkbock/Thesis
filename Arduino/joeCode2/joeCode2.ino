@@ -86,7 +86,8 @@ void setup() {
   
       
 
-  checkMyWebsite(); //initial call to server
+//  checkMyWebsite(); //initial call to server
+  uploadToMyWebsite("Quincy", "today", "noon", "1pm");
 
 }
  
@@ -115,7 +116,6 @@ void loop() {
   if (Serial.available() > 0) {
     wifly.write(Serial.read());
   }
-  uploadToMyWebsite("Quincy", "today", "noon", "1pm");
 }
  
  
@@ -166,7 +166,7 @@ void setLightColor(String color){
  
  
 /* function that requests data from server */
-void checkMyWebsite() {
+void checkMyWebsite(boolean sending) {
   Serial.println("\r-->start request from server");
   String host(site);
   if (wifly.open(site, 80)) {
@@ -192,8 +192,8 @@ void uploadToMyWebsite(String username, String date, String startTime, String en
     Serial.println(site);
     /* Send the request */
     //point wifly to correct folder directory on the server
-    wifly.println("GET /name/receiveData.php?userName=Quincy&date=today&startTime=noon&endTime=1pm HTTP/1.1"); //change me!
-//    wifly.println("GET /name/logAChore.php?userName="+username+"&date="+date+"&startTime="+startTime+"&endTime="+endTime+" HTTP/1.1"); //change me!
+//    wifly.println("GET /name/receiveData.php?userName=Quincy&date=today&startTime=noon&endTime=1pm HTTP/1.1"); //change me!
+    wifly.println("GET /name/logAChore.php?userName="+username+"&date="+date+"&startTime="+startTime+"&endTime="+endTime+" HTTP/1.1"); //change me!
     wifly.println("Host: " + host);
     wifly.println("Connection: close");
     wifly.println();
